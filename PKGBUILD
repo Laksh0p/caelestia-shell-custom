@@ -13,10 +13,12 @@ source=("git+https://github.com/Laksh0p/caelestia-shell-custom.git")
 sha256sums=('SKIP')
 
 build() {
+  cd "$srcdir/caelestia-shell-custom"
   cmake -B build -S .
   cmake --build build
 }
 
 package() {
+  cd "$srcdir/caelestia-shell-custom"
   DESTDIR="$pkgdir" cmake --install build
-  }
+}
