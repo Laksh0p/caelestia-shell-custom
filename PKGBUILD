@@ -19,4 +19,4 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-}
+  }
