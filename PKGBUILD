@@ -14,7 +14,12 @@ sha256sums=('SKIP')
 
 build() {
   cd "$srcdir/caelestia-shell-custom"
-  cmake -B build -S .
+
+  cmake -B build -S . \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DINSTALL_QMLDIR=/usr/lib/qt6/qml \
+    -DINSTALL_QSCONFDIR=/usr/share/caelestia/shell
+
   cmake --build build
 }
 
